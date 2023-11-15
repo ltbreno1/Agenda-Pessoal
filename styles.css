@@ -26,8 +26,8 @@ body{
 /* CABECALHO */
 
 .agenda__cabecalho{
-    display: grid;
-    grid-template-columns: 64px auto;
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: var(--cor-cabecalho);
 }
@@ -69,6 +69,7 @@ body{
 
 .app__section-task-container {
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -328,24 +329,22 @@ body{
 }
 
 .app__footer {
-    display: flex;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    padding: 2.8rem 6rem;
-    justify-content: center;
-    align-items: center;
+    padding: 1rem 6rem;
     background: var(--cor-cabecalho);
-    margin-top: 35rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: var(--fonte-principal);
+    color: var(--color-primary);
+    font-weight: 700;
 }
 
-.app__footer-text {
-    color: var(--fonte-cor);
-    text-align: center;
-    font-family: var(--fonte-principal);
-    font-weight: 300;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
+.rodape__conteudo{
+    padding: 10px;
 }
 
 
@@ -368,10 +367,19 @@ body{
 
 @media (max-width: 426px){
         .app__form-footer{
-            margin-top: 0.7rem;
             flex-wrap: nowrap;
             flex-direction: column;
             gap: 5px;
+        }
+
+        .agenda__cabecalho{
+            display:flex;
+            justify-content: center;
+        }
+       
+
+        .agenda__cabecalho-titulo{
+            display: none;
         }
 }
 
