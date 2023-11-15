@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imagens/caderno-alternativo.png" type="image/x-icon">
+    <title>Agenda Pessoal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="script-crud.js" defer></script>
+</head>
+<body>
+    <main class="agenda">
+        <header class="agenda__cabecalho">
+            <div class="agenda__cabecalho-extra">
+                <!-- <figure class="agenda__cabecalho-botao">
+                    <img src="./imagens/menu-hamburguer.png" alt="menu hamburger">
+                </figure> -->
+            </div>
+            <div class="agenda__cabecalho-principal">
+                <figure class="agenda__cabecalho-imagem">
+                    <img src="./imagens/caderno-alternativo.png" alt="logo agenda">
+                </figure>
+                <h1 class="agenda__cabecalho-titulo">Agenda Pessoal</h1>
+            </div>
+        </header>
+
+        <section class="agenda__principal">
+                <h1 class="agenda__principal-banner">
+                    Liste seus afazeres <strong class="agenda__principal-banner-strong">com facilidade!</strong>
+                </h1>
+
+        </section>
+
+        <section class="app__section-task-container">
+            <div class="app__section-task-content">
+                <header class="app__section-active-task">
+                    <p class="app__section-active-task-description"></p>
+                </header>
+                <div class="app__section-task-header">
+                    <h2 class="app__section-tasks-heading">Lista de tarefas:</h2>
+                    <div class="dropdown-container">
+                        <button class="app_button-more">
+                            <img src="./imagens/menu-ponto-vertical.png" alt="">
+                        </button>
+                        <ul class="app__section-task-header__ul">
+                            <li class="app__section-task-header__li">
+                                <button class="app__section-task-header__li__button" id="btn-remover-concluidas">
+                                    <img src="./imagens/check.svg" alt="">
+                                    Limpar tarefas concluídas
+                                </button>
+                            </li>
+                            <li class="app__section-task-header__li">
+                                <button class="app__section-task-header__li__button" id="btn-remover-todas">
+                                    <img src="./imagens/trash.svg" alt="">
+                                    Limpar todas as tarefas
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="app__section-task-list"></ul>
+                <form class="app__form-add-task hidden" aria-hidden="true">
+                    <div class="app__form-field">
+                        <label class="app__form-label">
+                            Adicionando tarefa
+                        </label>
+                        <textarea required rows="4" class="app__form-textarea" placeholder="O que você precisa anotar?"></textarea>
+                        <input class="data__input" type="date" id="dataInput">
+                    </div>
+                    
+                    <footer class="app__form-footer">
+                        <button type="button" class="app__form-footer__button app__form-footer__button--delete">
+                            <img src="./imagens/delete.png" alt=""> Excluir
+                        </button>
+                        <div class="splitter"></div>
+                        <button type="button" class="app__form-footer__button app__form-footer__button--cancel">
+                            <img class="button-cancel" src="./imagens/close.png" alt=""> Cancelar
+                        </button>
+                        <button class="app__form-footer__button app__form-footer__button--confirm">
+                            <img src="./imagens/save.png" alt=""> Salvar
+                        </button>
+                    </footer>
+                </form>
+                <button class="app__button--add-task">
+                    <img src="./imagens/adicionar.png" alt=""> Adicionar nova tarefa
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app__footer">
+        <p class="app__footer-text">
+            Desenvolvido por Breno Lana. 
+        </p>
+    </footer>
+</body>
+</html>
