@@ -25,6 +25,7 @@ const taskIconSvg = `
 </svg>
 `
 
+
 let tarefaSelecionada = null
 let itemTarefaSelecionada = null
 
@@ -70,13 +71,15 @@ const selecionaTarefaParaEditar = (tarefa, elemento) => {
     textarea.value = tarefa.descricao
 }
 
+
 function createTask(tarefa) {
     const li = document.createElement('li');
     li.classList.add('app__section-task-list-item');
-
+    
     const svgIcon = document.createElement('svg');
+    svgIcon.classList.add('app__section-task-icon');
     svgIcon.innerHTML = taskIconSvg;
-
+    
     const dataParagrafo = document.createElement('p');
     dataParagrafo.classList.add('app__section-task-list-item-date');
 
@@ -93,6 +96,7 @@ function createTask(tarefa) {
 
     const editIcon = document.createElement('img');
     editIcon.setAttribute('src', '/imagens/edit.png');
+    editIcon.classList.add('app__section-task-icon-edit')
 
     button.appendChild(editIcon);
 
