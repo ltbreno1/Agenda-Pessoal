@@ -86,7 +86,7 @@ function createTask(tarefa) {
 
     const dataFormatada = new Date(tarefa.data);
     
-    dataParagrafo.textContent = formatarData(dataFormatada);
+    dataParagrafo.textContent = formatarData(dataFormatada, dataParagrafo);
 
     const button = document.createElement('button');
     button.classList.add('app_button-edit');
@@ -132,7 +132,11 @@ function createTask(tarefa) {
     return li;
 }
 
-function formatarData(data) {
+function formatarData(data, dataParagrafo) {
+    if(data=='Invalid Date'){
+        dataParagrafo.style.display = "none"
+        return null
+    }
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const dataFormatada = new Date(data);
     return dataFormatada.toLocaleDateString('pt-BR', options);
@@ -219,6 +223,8 @@ const removerTarefas = (somenteConcluidas) => {
     tarefas = somenteConcluidas ? tarefas.filter(t => !t.concluida) : []
     updateLocalStorage()
     formTask.style.display = "none";
+    location.reload();
+    
 }
 
 btnDeletarConcluidas.addEventListener('click', () => removerTarefas(true))
